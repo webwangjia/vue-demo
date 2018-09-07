@@ -28,10 +28,15 @@
         </div>
 
         <div>
-            <p v-for="item in 3">{{item}}</p>
-            <p v-for="item in forDataAry">
+            <p v-for="item in 3" :key="item">{{item}}</p>
+            <p v-for="(item,index) in forDataAry" :key="index">
                 {{item.name}} 今年是 {{item.age}} 岁
             </p>
+        </div>
+
+        <div>
+            <input v-model="moduleDate" type="text">
+            <p>{{moduleDate}}</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
@@ -53,7 +58,8 @@
                        name:"老李",
                        age:25
                    }
-                ]
+                ],
+                moduleDate:'我是双向绑定'
             },
             methods:{
                 buttonFun(){

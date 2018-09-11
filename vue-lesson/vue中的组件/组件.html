@@ -34,7 +34,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script>
-      
         Vue.component('my-button',{
             data:function(){
                 return {
@@ -66,9 +65,16 @@
             },
             components:{
                 componentTwo,
+            },
+            beforeCreate(){
+                console.log(this.parent)
+            },
+            created(){
+                console.log(this.parent)
             }
         })
 
+       
     </script>
 </body>
 </html>
